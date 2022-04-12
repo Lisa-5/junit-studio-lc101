@@ -55,13 +55,13 @@ public class BalancedBracketsTest {
         assertTrue(BalancedBrackets.hasBalancedBrackets("[LaunchCode][]"));
     }
 
-    //Assert false a string containing only one bracket in not balanced.
+    //Assert false a string containing only one bracket is balanced.
     @Test
     public void stringContainsOneOpeningBracket(){
         assertFalse(BalancedBrackets.hasBalancedBrackets("[LaunchCode"));
     }
 
-    //Assert false a string containing only one closing bracket is not balanced.
+    //Assert false a string containing only one closing bracket is balanced.
     @Test
     public void stringContainsOneClosingBracket(){
         assertFalse(BalancedBrackets.hasBalancedBrackets("LaunchCode]"));
@@ -91,5 +91,10 @@ public class BalancedBracketsTest {
     @Test
     public void stringContainsOutOfOrderBrackets(){
         assertFalse(BalancedBrackets.hasBalancedBrackets("Launch]Code["));
+    }
+
+    @Test
+    public void stringWithNoBrackets(){
+        assertTrue(BalancedBrackets.hasBalancedBrackets("Dog Cat"));
     }
 }
